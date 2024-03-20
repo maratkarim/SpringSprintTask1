@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <div th:insert="~{vendor/head.html}"></div>
+</head>
+<body>
+    <div th:insert="~{vendor/navbar.html}"></div>
+<!--    <div th:include="~{vendor/details.html}"></div>-->
+    <div class="container">
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">NAME</th>
+                <th scope="col">SURNAME</th>
+                <th scope="col">EXAM</th>
+                <th scope="col">MARK</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            <tr th:each="it : ${stud_att}">
+                <th scope="row" th:text="${it.getId()}" th:style="${it.getMark() == 'F' ? 'color:red;' :
+                (it.getMark() == 'A' ? 'color:green;' : (it.getMark() == 'B' ? 'color:blue;' : (it.getMark() == 'C' ? 'color:purple;': 'color:black;')))}"></th>
+                <td th:text="${it.getName()}" th:style="${it.getMark() == 'F' ? 'color:red;' :
+                (it.getMark() == 'A' ? 'color:green;' : (it.getMark() == 'B' ? 'color:blue;' : (it.getMark() == 'C' ? 'color:purple;': 'color:black;')))}"></td>
+                <td th:text="${it.getSurname()}" th:style="${it.getMark() == 'F' ? 'color:red;' :
+                (it.getMark() == 'A' ? 'color:green;' : (it.getMark() == 'B' ? 'color:blue;' : (it.getMark() == 'C' ? 'color:purple;': 'color:black;')))}"></td>
+                <td th:text="${it.getExam()}" th:style="${it.getMark() == 'F' ? 'color:red;' :
+                (it.getMark() == 'A' ? 'color:green;' : (it.getMark() == 'B' ? 'color:blue;' : (it.getMark() == 'C' ? 'color:purple;': 'color:black;')))}"></td>
+                <td th:text="${it.getMark()}" th:style="${it.getMark() == 'F' ? 'color:red;' :
+                (it.getMark() == 'A' ? 'color:green;' : (it.getMark() == 'B' ? 'color:blue;' : (it.getMark() == 'C' ? 'color:purple;': 'color:black;')))}"></td>
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<head th:insert="~{vendor/head.html}">
+</head>
+<body>
+<div th:insert="~{vendor/navbar.html}"></div>
+
+<div class="container">
+    <div class="row mt-3">
+        <div class="col-6 mx-auto">
+            <form th:action="@{'/addItemS'}" method="post">
+                <div class="mb-3">
+                    <label class="form-label">NAME:</label>
+                    <input name="name" type="text" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">SURNAME:</label>
+                    <input name="surname" type="text" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">EXAM:</label>
+                    <input name="exam" type="text" class="form-control">
+                </div>
+                <button class="btn btn-primary">SUBMIT</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+</body>
